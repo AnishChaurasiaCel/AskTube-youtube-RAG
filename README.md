@@ -5,6 +5,12 @@ indexes the video's transcript into a local vector store and answers questions
 using retrieval-augmented generation (RAG) with a local LLM via Ollama. The
 frontend is a Vite + React + TypeScript app.
 
+## Screenshots
+
+| Landing page | Chat |
+| --- | --- |
+| ![Landing page](docs/screenshots/landing.png) | ![Chat screen](docs/screenshots/chat.png) |
+
 ## Architecture
 
 - **Backend** — FastAPI, LangChain, ChromaDB (local persistent vector store),
