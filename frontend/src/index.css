@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --color-base-950: #05060a;
+  --color-base-900: #0a0d16;
+  --color-base-850: #0f1320;
+  --color-base-800: #141928;
+  --color-base-700: #1d2336;
+  --color-base-600: #2a3350;
+  --color-base-400: #6b7591;
+  --color-base-300: #9aa3ba;
+  --color-base-100: #e7e9f2;
+
+  --color-brand-500: #7c5cff;
+  --color-brand-400: #9a80ff;
+  --color-brand-600: #5f3dfa;
+
+  --color-accent-500: #ff3b5c;
+
+  --animate-fade-in: fade-in 0.4s ease-out;
+  --animate-rise: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(124, 92, 255, 0.16), transparent),
+    radial-gradient(ellipse 60% 50% at 100% 10%, rgba(255, 59, 92, 0.08), transparent),
+    var(--color-base-950);
+  color: var(--color-base-100);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-brand-500);
+  color: white;
+}
+
+/* thin, unobtrusive scrollbars for the chat + video panes */
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-base-600) transparent;
+}
+.scroll-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background-color: var(--color-base-600);
+  border-radius: 999px;
+}
+
+@keyframes typing-bounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+.typing-dot {
+  animation: typing-bounce 1.1s ease-in-out infinite;
+}
